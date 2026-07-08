@@ -10,3 +10,4 @@ Created by a Commander on QuantumLogics Community.
 - DCAP108_DIGITAL_CIRCUITS_AND_LOGIC_DESIGNS.txt
 - Logic_Design.txt
 - TBQ_Feher_DigitalLogicbw.txt
+- The Art of Assembly Language 2nd Edition (Randall Hyde).txt
