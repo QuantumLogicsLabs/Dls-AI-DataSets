@@ -22,5 +22,3 @@ Created by a Commander on QuantumLogics Community.
 - ProgrammingGroundUp-1-0-booksize.txt (Programming from the Ground Up — Jonathan Bartlett)
 - Introduction to Assembly Language Programming_ From Soup to Nuts_.txt (Charles W. Kann)
 
-### Mining & Geology
-- A Book on Coal Mining.txt
