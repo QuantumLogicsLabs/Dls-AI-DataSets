@@ -1,0 +1,2768 @@
+  ﻗﺼﺎص ١واﺋﻞ 
+Digital Logic design
+901220
+By: Dr. Wa’elAl Qassas
+Al Albaytuniversity
+2
+ﻗﺼﺎص واﺋﻞAABU
+Text Book : Digital Logic & Computer Design/MorisMano
+Course part
+• Theoretical Lectures: 3 hours weekly
+• Practical LAB: 1 lab ( 2 hours) weekly
+Grading policy:
+• First Theoretical Exam: 15 points
+• Second Theoretical Exam: 15 points
+• Final Theoretical Exam : 40 points
+• Mid Practical Exam: 10 points
+• Final Practical Exam: 10 points
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٢واﺋﻞ 
+3
+ﻗﺼﺎص واﺋﻞAABU
+Web sites.
+Www.geocities.com/wael_it2003
+www.aabu.edu.jo/it/~wael
+http://web2.aabu.edu.jo:8080
+http://web2.aabu.edu.jo:8080/tool/course_file/
+901220_lectures.pdf
+www.aabu.edu.jo/~wael
+4
+ﻗﺼﺎص واﺋﻞAABU
+Syllabus
+•Syllabus review & Introduction :1 hour
+•Simple logic Circuits and manufacturing technology :1 hours
+•Truth table and symbolic representation :1 hour
+•Fundamental properties for Boolean algebra :1 hours
+•Implementing Circuits form Truth table , practice : 2 hours
+•XOR gate, Demorgan’sLaw : 1 hour
+•Logical expression simplification using Fundamental properties, 
+Demorgan, Practice : 1 hours.
+•Karnaughmap ( 3 input, 4 input), SOP,POS, practice: 3 hour
+•Tabulation method : 2 hours.
+•Numbering systems, Binary numbers, Hexadecimal,…, real number 
+implementation,: 3 hours
+•First exam., Question solving & evaluation : 1 hour.
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٣واﺋﻞ 
+5
+ﻗﺼﺎص واﺋﻞAABU
+Transistor: Building Block of Computers
+Microprocessors contain millions of transistors
+• Intel Pentium II: 7 million
+• Compaq Alpha 21264: 15 million
+• Intel Pentium III: 28 million
+Logically, each transistor acts as a switch
+Combined to implement logic functions 
+• AND, OR, NOT
+Combined to build higher-level structures
+• Adder, multiplexer, decoder, register, …
+6
+ﻗﺼﺎص واﺋﻞAABU
+Simple Switch Circuit
+Switch open:
+• No current through circuit
+• Light is off
+• Vout is + 5V
+Switch closed:
+• Short circuit across switch
+• Current flows
+• Light is on
+• Vout is 0V
+Switch-based circuits can easily represent two states:
+on/off, open/closed, voltage/no voltage. 
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٤واﺋﻞ 
+7
+ﻗﺼﺎص واﺋﻞAABU
+LOGICAL AND:
+8
+ﻗﺼﺎص واﺋﻞAABU
+N-type MOS Transistor
+MOS = Metal Oxide Semiconductor
+• two types: N-type and P-type
+N-type
+• when Gate has positive voltage,
+short circuit between #1 and #2
+(switch closed)
+• when Gate has zero voltage,
+open circuit between #1 and #2
+(switch open) Gate = 1
+Gate = 0
+Terminal #2 must be
+connected to GND (0V).
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٥واﺋﻞ 
+9
+ﻗﺼﺎص واﺋﻞAABU
+P-type MOS Transistor
+P-type is complementary to N-type
+• when Gate has positive voltage,
+open circuit between #1 and #2
+(switch open)
+• when Gate has zero voltage,
+short circuit between #1 and #2
+(switch closed)
+Gate = 1
+Gate = 0
+Terminal #1 must be
+connected to +2.9V.
+10
+ﻗﺼﺎص واﺋﻞAABU
+Logic Gates
+Use switch behavior of MOS transistors
+to implement logical functions: AND, OR, NOT.
+Digital symbols:
+• recall that we assign a range of analog voltages to each
+digital (logic) symbol
+• assignment of voltage ranges depends on 
+electrical properties of transistors being used
+Ø typical values for "1": +5V, +3.3V, +2.9V
+Ø from now on we'll use +5V
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٦واﺋﻞ 
+11
+ﻗﺼﺎص واﺋﻞAABU
+Inverter (NOT Gate)
+0 V2.9 V
+2.9 V0 V
+OutIn
+01
+10
+OutIn
+Truth table
+12
+ﻗﺼﺎص واﺋﻞAABU
+NOR Gate
+010
+001
+1
+0
+A
+01
+10
+CB
+Note: Serial structure on top, parallel on bottom.
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٧واﺋﻞ 
+13
+ﻗﺼﺎص واﺋﻞAABU
+OR Gate
+Add inverter to NOR.
+110
+101
+1
+0
+A
+11
+00
+CB
+14
+ﻗﺼﺎص واﺋﻞAABU
+NAND Gate (AND-NOT)
+110
+101
+1
+0
+A
+01
+10
+CB
+Note: Parallel structure on top, serial on bottom.
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٨واﺋﻞ 
+15
+ﻗﺼﺎص واﺋﻞAABU
+AND Gate
+Add inverter to NAND.
+010
+001
+1
+0
+A
+11
+00
+CB
+16
+ﻗﺼﺎص واﺋﻞAABU
+Basic Logic Gates
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٩واﺋﻞ 
+17
+ﻗﺼﺎص واﺋﻞAABU
+Fundamental Properties of booleanalgebra:
+Commutative:
+Ø X + Y = Y + X
+Ø X . Y =  Y . X
+Associative:
+Ø( X + Y) + Z = X + (Y + Z) 
+Ø( X . Y) . Z = X . (Y . Z)
+Identity:
+ØX + 0 = X
+ØX . 1 = X
+Complement:
+ØX +(X’) = 1
+ØX . (X’) = 0
+Distributive:
+Ø X . (Y + Z) = (X . Y) + (X . Z)
+ØX + (Y . Z) = (X + Y) . (X + Z)
+Absorption
+ØX + X.Y = X
+18
+ﻗﺼﺎص واﺋﻞAABU
+X.X = X
+X+X = X
+X + 1= 1
+X . 0 = 0
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٠١واﺋﻞ 
+19
+ﻗﺼﺎص واﺋﻞAABU
+X.(Y+Z)=(X.Y)+(X.Z)
+0
+0
+0
+0
+0
+1
+1
+1
+0
+0
+0
+0
+0
+1
+0
+1
+0
+0
+0
+0
+0
+0
+1
+1
+0
+0
+0
+0
+0
+1
+1
+1
+0
+1
+1
+1
+0
+1
+1
+1
+0 0 0
+0 0 1
+0 1 0
+0 1 1
+1 0 0
+1 0 1
+1 1 0
+1 1 1
+(X.Y)+(X.Z)X.ZX.YX.(Y+Z)Y+ZX Y Z
+20
+ﻗﺼﺎص واﺋﻞAABU
+X+(Y.Z)=(X+Y).(X+Z)
+0
+0
+0
+1
+1
+1
+1
+1
+0
+1
+0
+1
+1
+1
+1
+1
+0
+0
+1
+1
+1
+1
+1
+1
+0
+0
+0
+1
+1
+1
+1
+1
+0
+0
+0
+1
+0
+0
+0
+1
+0 0 0
+0 0 1
+0 1 0
+0 1 1
+1 0 0
+1 0 1
+1 1 0
+1 1 1
+(X+Y).(X+Z)X+ZX+YX+(Y.Z)Y.ZX Y Z
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ١١واﺋﻞ 
+21
+ﻗﺼﺎص واﺋﻞAABU
+More than 2 Inputs?
+AND/OR can take any number of inputs.
+• AND = 1 if all inputs are 1.
+• OR = 1 if any input is 1.
+• Similar for NAND/NOR.
+Can implement with multiple two-input gates,
+or with single CMOS circuit.
+22
+ﻗﺼﺎص واﺋﻞAABU
+Practice
+Implement a 3-input NOR gate with CMOS.
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٢١واﺋﻞ 
+23
+ﻗﺼﺎص واﺋﻞAABU
+Logical Completeness
+Can implement ANY truth table with AND, OR, NOT.
+1010
+0001
+1101
+0011
+1
+0
+0
+0
+A
+010
+011
+1
+0
+B
+01
+00
+DC
+1. AND combinations 
+that yield a "1" in the 
+truth table.
+2. OR the results
+of the AND gates.
+24
+ﻗﺼﺎص واﺋﻞAABU
+Practice
+Implement the following truth table.
+101
+110
+011
+0
+A
+00
+CB
+A
+B C
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٣١واﺋﻞ 
+25
+ﻗﺼﺎص واﺋﻞAABU
+Another example:
+0110
+1010
+1100
+0000
+1
+1
+1
+1
+X
+001
+010
+011
+0
+Y
+00
+OutputZ
+We want to build a circuit that has 3 binary inputs.
+This CKT is On if the inputs are X’Y’Z or X’YZ’ .
+Build the Truth table, then Draw the Ckt
+X
+Y
+Z Output
+26
+ﻗﺼﺎص واﺋﻞAABU
+XOR gate:
+A XOR B= A.B’+A’.B
+A + B 
+011
+101
+110
+000
+BA
+A
+B
+A + B
+A + B
+A
+B
+A.B’+A’.B
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٤١واﺋﻞ 
+27
+ﻗﺼﺎص واﺋﻞAABU
+DeMorgan'sLaw
+Converting AND to OR (with some help from NOT)
+Consider the following gate:
+0
+0
+0
+1
+0
+0
+1
+1
+0
+1
+0
+1
+101
+110
+111
+0
+A
+00
+B BA ⋅BA BA ⋅
+Same as A+B!
+To convert AND to OR 
+(or vice versa),
+invert inputs and output.
+28
+ﻗﺼﺎص واﺋﻞAABU
+DeMorganLaw:
+ØA+B= (A’ . B’)’
+ØA.B=(A’+B’)’
+100011
+101001
+100110
+011100
+(A’.B’)’A’.B’B’A’BA OR 
+Truth 
+table
+100011
+011001
+010110
+011100
+(A’+B’)’A’+B’B’A’BA
+AND 
+Truth 
+table
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٥١واﺋﻞ 
+29
+ﻗﺼﺎص واﺋﻞAABU
+Build the following logical expression using AND, Not 
+Gates only:
+F=X.Y+Z’
+=((X.Y)’.Z’’)’
+=((X.Y)’.Z)’
+Another example:
+F= XYZ+Y’Z+XZ’
+= ( (XYZ)’.(Y’Z)’.(XZ’)’ )’
+30
+ﻗﺼﺎص واﺋﻞAABU
+Simplify the following booleanexpression
+F= (A’BC + C + A + D )’
+= ( A’BCC’ + (A’BC)’C +A+D)’
+= (     0       + (A’BC)’C +A+D)’
+= (     0       + (A+B’+C’)C+A+D)’
+= ( AC+B’C+C’C+A+D)’
+= ( AC+B’C+ 0 + A +D)’
+= (AC+A + B’C + D)’
+= ( A    + B’C + D)’
+= A’ (B’C)’ D’
+= A’ D’( B+C’)
+= A’BD’+A’C’D’
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٦١واﺋﻞ 
+31
+ﻗﺼﺎص واﺋﻞAABU
+Simplification using booleanalgebra:
+We have the following truth table for a logical circuit and we want to 
+implement this using the minimum number of gates:
+0111
+1011
+1101
+1001
+1110
+0010
+1100
+0000
+FCBA F=A’B’C+A’BC+AB’C’+AB’C+ABC’
+= A’B’C+A’BC+AB’(C+C’)+ABC’
+= A’C(B+B’)   +AB’ +ABC’
+= A’C+AB’+AC’(B+B’) ;we can reuse AB’C’
+=A’C+AB’+AC’
+SOP
+32
+ﻗﺼﺎص واﺋﻞAABU
+Another example:
+1111
+1011
+1101
+0001
+1110
+0010
+1100
+0000
+FCBA F=A’B’C+A’BC+AB’C+ABC’+ABC
+= A’C(B+B’)+AB’C+ABC’+ABC
+= A’C + AC(B’+B) +ABC’
+= A’C+AC+ AB(C+C’)
+=A’C+AC+AB
+= C(A+A’)+AB
+= C+AB
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٧١واﺋﻞ 
+33
+ﻗﺼﺎص واﺋﻞAABU
+KarnaughMaps
+Karnaughmap : is a representation for the truth table in a graphical 
+way, which makes the simplification of any booleanfunction easier.
+For 3 input booleanfunction the Karnaughmap will be as follows :
+ABC’
+110
+ABC
+111
+AB’C
+101
+AB’C’
+1001
+A’BC’
+010
+A’BC
+011
+A’B’C
+001
+A’B’C’
+0000
+10110100
+A
+BC
+As we can see, each cell represent one raw of the truth table
+Next step is to fill the map using the truth table output.
+34
+ﻗﺼﺎص واﺋﻞAABU
+Simplification using Karnaugh:
+Let us resolve the previous examples using karnaughmap:
+0111
+1011
+1101
+1001
+1110
+0010
+1100
+0000
+FCBA
+10111
+01100
+10110100
+A
+BC
+F=A’C+AC’ +B’C
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٨١واﺋﻞ 
+35
+ﻗﺼﺎص واﺋﻞAABU
+Resolve the same example in another way:
+10111
+01100
+10110100
+BC
+F=A’C+AB’+AC’
+36
+ﻗﺼﺎص واﺋﻞAABU
+Another example
+11111
+01100
+10110100
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٩١واﺋﻞ 
+37
+ﻗﺼﺎص واﺋﻞAABU
+Convert from logical expression to minterms
+What are the mintermsthat represent the 
+following expression assuming that we have 3 
+inputs A,B, and C
+F=A+A’C
+F=
+38
+ﻗﺼﺎص واﺋﻞAABU
+Karnaughmap for 4 input booleanfunction
+AB
+CD
+10
+1010
+11
+1011
+9
+1001
+8
+1000
+10
+14
+1110
+15
+1111
+13
+1101
+12
+1100
+11
+6
+0110
+7
+0111
+5
+0101
+4
+0100
+01
+2
+0010
+3
+0011
+1
+0001
+0
+0000
+00
+10110100
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٠٢واﺋﻞ 
+39
+ﻗﺼﺎص واﺋﻞAABU
+40
+ﻗﺼﺎص واﺋﻞAABU
+Assume we have the booleanfunction F with 4 inputs:
+F(A,B,C,D)= ∑ (0,1 ,4, 6, 8,11,13, 15)
+ØMake the truth table for this function
+ØWrite the booleanequation for this function (Before 
+simplification)
+ØSimplify this function using karnaughmap technique
+ØDraw the simplified equation.
+1110
+1111
+1101
+1100
+10110100
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ١٢واﺋﻞ 
+41
+ﻗﺼﺎص واﺋﻞAABU
+Minterms& Maxterms
+To understand the relation between Mintermsand Maxtermslet is see the 
+following example:
+F=Σ(1,3,5,6,7)
+F=A’B’C+A’BC+AB’C+ABC’+ABC
+F’=A’B’C’+A’BC’+AB’C’
+We know that F’’=F
+F=F’’=(A’B’C’+A’BC’+AB’C’)’
+F=(A’B’C’)’ .(A’BC’)’ . (AB’C’)’
+F=(A+B+C) .(A+B’+C). (A’+B+C)
+F=Π(0,2,4)
+1
+1
+1
+0
+1
+0
+1
+0
+F
+0111
+0011
+0101
+1001
+0110
+1010
+0100
+1000
+F’CBA
+42
+ﻗﺼﺎص واﺋﻞAABU
+Minterms& Maxterms
+For a 3 binary variables
+M7x’+y’+z’m7xyz1 1 1
+M6x’+y’+zm6xyz’1 1 0
+M5x’+y+z’m5xy’z1 0 1
+M4x’+y+zm4xy’z’1 0 0
+M3x+y’+z’m3x’yz0 1 1
+M2x+y’+zm2x’yz’0 1 0
+M1x+y+z’m1x’y’z0 0 1
+M0x+y+zm0x’y’z’0 0 0
+DesignationTermDesignationTermx y z
+MaxtermsMinterms
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٢٢واﺋﻞ 
+43
+ﻗﺼﺎص واﺋﻞAABU
+5 variables Karnaughmap
+100101111110010011001000
+10
+11
+01
+00
+AB
+CDE
+44
+ﻗﺼﺎص واﺋﻞAABU
+Tabulation method
+• Last lecture we noticed the difficulty of 
+simplifying 5 variable equations using 
+karnaughMap.
+• Another method is used to simplify boolean
+equations.
+• Tabulation method (Quine-McCluskey), or 
+prime implicants:-
+• Its suitable for machine computation
+• Uses two phases:
+i.Finding Prime implicants
+ii.Selecting Prime implicants
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٣٢واﺋﻞ 
+45
+ﻗﺼﺎص واﺋﻞAABU
+Determining Prime implicants
+Example 1 : F(w,x,y,z)=Σ(0,1,2,8,10,11,14,15)
+First we list the mintermsin groups depending on the number of ones 
+in each minterm
+0 0000
+~~~~~~~~~~
+1 0001
+2 0010
+8 1000
+~~~~~~~~~
+101010
+~~~~~~~~~
+111011
+141110
+~~~~~~~~~
+15 1111
+46
+ﻗﺼﺎص واﺋﻞAABU
+Then look for any two mintermsthat differ on one variable 
+only , between any adjacent groups
+0 0000
+1 0001
+2 0010
+8 1000
+101010
+111011
+141110
+15 1111
+0,1 000-
+0,2 00-0
+0,8 -000
+2,10 -010
+8,10 10-0
+10,11101-
+10,141-10
+11,151-11
+14,15111-
+0,2,8,10 -0-0
+0,8,2,10 -0-0
+10,11,14,151-1-
+10,14,11,151-1-
+The prime implicantsare : w’x’y’  , x’z’ , wy
+Next step is to select needed prime implicants.
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٤٢واﺋﻞ 
+47
+ﻗﺼﺎص واﺋﻞAABU
+VVVVWY
+VVVVX’Z’
+VVW’X’Y’
+151411108210
+48
+ﻗﺼﺎص واﺋﻞAABU
+Example 2
+Simplify the following SOP using tabulation method.
+F(W,X,Y,Z)=Σ(1,4,6,7,8,9,10,11,15)
+Remember : first Find Prime implicants
+then select the needed prime implicants.
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٥٢واﺋﻞ 
+49
+ﻗﺼﺎص واﺋﻞAABU
+Determining the prime implicants
+1 0001 1,9   -001 8,9,10,11   10--
+4  0100 4,6 01-0 8,10,9,11   10--
+8  1000 8,9 100- ~~~~~~~~~~~~
+~~~~~~ 8,10 10-0
+6   0110 ~~~~~~~~
+9   1001 6,7 011-
+10 1010 9,11 10-1
+~~~~~~ 10,11101-
+7 0111 ~~~~~~~~~
+111011 7,15 -111
+~~~~~~~ 11,15 1-11
+15 1111
+X’Y’Z, W’XZ’, W’XY, XYZ, WYZ, WX’
+50
+ﻗﺼﺎص واﺋﻞAABU
+1 4       6 7      8      9      10      11      15   
+V       V       V        V  WX’
+V      VWYZ
+V                                     VXYZ
+V    VW’XY
+V      VW’XZ’
+V                                        VX’Y’Z
+• Selection for the needed prime implicants
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٦٢واﺋﻞ 
+51
+ﻗﺼﺎص واﺋﻞAABU
+IC’s characteristics ( From Ch 1):
+ØFan-out: the number of standard loads that the 
+output of a gate can drive without impairing its 
+normal operation ( 20 to 50 gates)
+ØPower dissipation : the supplied power required 
+to operate the gate ( in mW)
+ØPropagation delay: The average transition delay 
+time for a signal to propagate from input to output 
+when the binary signals change in value ( in ns)
+52
+ﻗﺼﺎص واﺋﻞAABU
+Binary numbers ( Chapter 1)
+qComputers uses Binary system.
+qWe need to represent different numbering types 
+use the Binary system.
+qRemember the conversion between Binary & 
+Decimal, this was used to represent positive 
+integer numbers only.
+qBut , what about negative numbers. 
+qThree different methods were used to represent 
+negative integer numbers:
+qSign magnitude
+qOnes Complement
+qTwos complement
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٧٢واﺋﻞ 
+53
+ﻗﺼﺎص واﺋﻞAABU
+Binary numbers
+54
+ﻗﺼﺎص واﺋﻞAABU
+Negative numbers (Sign magnitude)
+This technique uses additional binary digit to represent 
+the sign, 0 to represent  positive, 1 to represent negative.
+qEx.:
+5  =   0101
+-5 =  1101
+Also 
+5 = 00000101
+-5= 10000101
+www.microcode.com Circuit maker
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٨٢واﺋﻞ 
+55
+ﻗﺼﺎص واﺋﻞAABU
+Negative numbers (1’s Complement)
+q1’s comp is another method used to represent negative 
+numbers.
+qIn this method we invert every bit in the positive number 
+in order to represent its negative.
+qEx.:
+9 = 01001
+-9= 10110
+qAgain remember that we use additional digit to 
+represent the sign
+qWe may represent 9 as 00001001 ; zeros on left have no 
+value
+-9 in 1’s comp will be  11110110
+56
+ﻗﺼﺎص واﺋﻞAABU
+Negative numbers (2’s complement)
+qThis is the method which is used in most computers to 
+represent integer numbers nowadays.
+qRemember always to represent a positive number using 
+any of the previous methods is the same, all what is 
+needed is a 0 on the left to show that the number is 
+positive
+qTo represent a negative number in 2’s Comp , first we 
+find the 1’s Comp, then add 1 to the result
+qEx:
+How we represent -9 in 2’s comp
+1- 9 in binary= 01001
+2- invert = 10110
+3     add 1     = 10111;     -9 in 2’s Comp.
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٩٢واﺋﻞ 
+57
+ﻗﺼﺎص واﺋﻞAABU
+-22
+22 = 010110
+In 1’s= 101001
+In 2’s=101010  -22 in 2’s comp
+58
+ﻗﺼﺎص واﺋﻞAABU
+Two’s Complement Shortcut
+To take the two’s complement of a number:
+• copy bits from right to left until (and including) the first “1”
+• flip remaining bits to the left
+011010000 011010000
+100101111 (1’s comp)
++ 1
+100110000 100110000
+(copy)(flip)
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٠٣واﺋﻞ 
+59
+ﻗﺼﺎص واﺋﻞAABU
+Operations: Arithmetic and Logical
+Recall: 
+a data type includes representation and operations.
+We now have a good representation for signed integers,
+so let’s look at some arithmetic operations:
+• Addition
+• Subtraction
+• Sign Extension
+We’ll also look at overflow conditions for addition.
+Multiplication, division, etc., can be built from these 
+basic operations.
+Logical operations are also useful:
+• AND
+• OR
+• NOT
+60
+ﻗﺼﺎص واﺋﻞAABU
+Addition
+As we’ve discussed, 2’s comp. addition is just 
+binary addition.
+• assume all integers have the same number of bits
+• ignore carry out
+• for now, assume that sum fits in n-bit 2’s comp. representation
+01101000 (104) 11110110 (-10)
++11110000 (-16) + (-9)
+01011000 (88) (-19)
+Assuming 8-bit 2’
+s complement numbers.
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ١٣واﺋﻞ 
+61
+ﻗﺼﺎص واﺋﻞAABU
+Subtraction
+Negate subtrahend (2nd no.) and add.
+• assume all integers have the same number of bits
+• ignore carry out
+• for now, assume that difference fits in n-bit 2’s comp. 
+representation
+01101000 (104) 11110110 (-10)
+-00010000 (16) - (-9)
+01101000 (104) 11110110 (-10)
++11110000 (-16) + (9)
+01011000 (88) (-1)
+Assuming 8-bit 2’
+s complement numbers.
+62
+ﻗﺼﺎص واﺋﻞAABU
+Sign Extension
+To add two numbers, we must represent them
+with the same number of bits.
+If we just pad with zeroes on the left:
+Instead, replicate the MS bit --the sign bit:
+4-bit 8-bit
+0100 (4) 00000100 (still 4)
+1100 (-4) 00001100 (12, not -4)
+4-bit 8-bit
+0100 (4) 00000100 (still 4)
+1100 (-4) 11111100 (still -4)
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٢٣واﺋﻞ 
+63
+ﻗﺼﺎص واﺋﻞAABU
+Overflow
+If operands are too big, then sum cannot be represented 
+as an n-bit 2’s comp number.
+We have overflow if:
+• signs of both operands are the same, and
+• sign of sum is different.
+Another test --easy for hardware:
+• carry into MS bit does not equal carry out
+01000 (8) 11000 (-8)
++01001 (9) +10111 (-9)
+10001 (-15) 01111 (+15)
+64
+ﻗﺼﺎص واﺋﻞAABU
+Build a Cktthat discovers the overflow
+Inputs Sa: Sign for the first number
+Sb: Sign for the second number
+Ss: Sign for the answer number
+0   0   0
+0   0   1
+0   1    0
+0   1   1
+1 0   0
+1   0   1
+1 1   0
+1   1   1
+OverflowSa SbSs
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٣٣واﺋﻞ 
+65
+ﻗﺼﺎص واﺋﻞAABU
+Real numbers ( outside the text book)
+qAll what we discussed before was about integers.
+qWhat about real numbers (ex.: 6.125)
+qTo represent real numbers we take first the integer part 
+and convert is as we learned before, and then take the 
+fraction part and convert it using the following algorithm
+q 1-multiply fraction by 2 
+q 2-take the integer of the result
+q 3-Repeat 1 and 2 until the fraction is zero, or until u reach get
+enough digits.
+qEx.  : 6.125
+6= 110
+0.125x2 = 0.25
+0.25x2   = 0.5
+0.5x2     = 1.0 
+6.125= 110.001
+66
+ﻗﺼﺎص واﺋﻞAABU
+Another example:
+Convert 9.2 to binary.
+9=1001
+0.2x2= 0.4
+0.4x2= 0.8
+0.8x2= 1.6 ;  take the fraction only
+0.6x2= 1.2
+0.2x2= 0.4 ; let us stop here, 5 digits after the point
+The binary equivalent will be: 1001.00110
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٤٣واﺋﻞ 
+67
+ﻗﺼﺎص واﺋﻞAABU
+Convert from binary
+Again let us take the previous results
+22 21 20 2-1 2-2 2-3
+1 1  0 . 0  0   1 
+= 4+2+.125=6.125
+Ex. 2:
+23 22 21 20 2-1 2-2 2-3 2-4 2-5
+1  0  0  1.  0  0   1   1   0
+= 8+1+ .125+.0625 = 9.1875   
+Why not 9.2    !??
+68
+ﻗﺼﺎص واﺋﻞAABU
+Floating numbers
+Nowadays numbers with decimal point are represendedin 
+the computer using IEEE 754 float number format.
+This format has to subtypes :
+• Float: 32 bit number can represent up to 1035 .
+• Double: 64 bit number can represent up to 10350 with more 
+number of digits after the point.
+We will not cover this topic here.
+It will be covered in Computer architecture course.
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٥٣واﺋﻞ 
+69
+ﻗﺼﺎص واﺋﻞAABU
+Hexadecimal
+qAs we noticed to read a long binary number is confusing
+qSo another numbering system was invented ( base 16)
+qWe know base 10 ,base 2, and now base 16
+qNumbers in (base 16) are : 0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F
+qThere is a direct relation between base 2 and base 16, 
+24=16 , so the conversion from binary to hexadecimal is 
+quite easy.
+qEach 4 binary digits are converted to one hexadecimal 
+digit.
+70
+ﻗﺼﺎص واﺋﻞAABU
+F111115
+E111014
+D110113
+C110012
+B101111
+A101010
+910019
+810008
+701117
+601106
+501015
+401004
+300113
+200102
+100011
+000000
+HexadecimalBinaryDecimal
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٦٣واﺋﻞ 
+71
+ﻗﺼﺎص واﺋﻞAABU
+Examples on Hexadecimal
+01010001=51h, 0x51,$51, 5116
+1110010 =$72
+10101110=$AE
+From Hex to decimal
+$ff= 1111 1111=255 10
+72
+ﻗﺼﺎص واﺋﻞAABU
+Binary Codes
+Binary coding is different from binary conversion
+BCD code : Binary coded decimal, is used to represent each decimal 
+digit to a 4 bit binary number,
+Ex:  13 = 0001 0011 in BCD
+Remember 13 = 1101 in binary
+Ex:   49 = 0100 1001   in BCD
+Remember that 49 = 0011 0001 in binary.
+Excess-3 code
+In Excess-3  0 = 0011, 1=0100, 2=0101 ,… , 9=1100
+This means that we add 3 to the number then convert it to binary
+We  mainly use this to avoid having zeros in transmission lines.
+Other coding methods ( See Page 17).
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٧٣واﺋﻞ 
+73
+ﻗﺼﺎص واﺋﻞAABU
+Error detection :
+Many techniques are used in order to detect if an error has occurred 
+in the data transmitted or stored, one of these is the parity check.
+The idea of the parity check is to add an extra bit to the binary 
+number, the value of this bit depends on the number of ones in the 
+binary number.
+The parity bit is generated on transmitting end, and checked at 
+receiving end
+A parity check involves appending a bit that makes the total number 
+of binary 1 digits in a character or word , either odd (for odd parity) or 
+even (for even parity).
+Examples: 
+Even parity 0000 0, 0001 1, 1111 0
+Odd parity:0000 1, 0001 0, 1111 1
+74
+ﻗﺼﺎص واﺋﻞAABU
+Alphanumeric Codes
+To represent numbers and letters we need some coding 
+method.
+First we need to know the number of symbols (letters, 
+numbers, or other symbols) 
+ASCII: American standard code for information 
+Interchange, is one of the commonly used codings
+It uses 7 bits , it can represent 127 different symbols
+Ex: A        = 100 0001,  
+a         =  110 0001
+1         =  011 0001
+space = 010 0000
+WAEL = 101 0111  100 0001  100 0101  100 1100
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٨٣واﺋﻞ 
+75
+ﻗﺼﺎص واﺋﻞAABU
+EBCDIC: Extended BCD Interchange, is an 8 bit coding
+Ex: A= 1100 0001
+1= 1111 0001
+space= 0100 0000
+76
+ﻗﺼﺎص واﺋﻞAABU
+Summary
+MOS transistors are used as switches to implement
+logic functions.
+• N-type: connect to GND, turn on (with 1) to pull down to 0
+• P-type: connect to +2.9V, turn on (with 0) to pull up to 1
+Basic gates: NOT, NOR, NAND
+• Logic functions are usually expressed with AND, OR, and NOT
+Properties of logic gates
+• Completeness
+Øcan implement any truth table with AND, OR, NOT
+• DeMorgan'sLaw
+Øconvert AND to OR by inverting inputs and output
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٩٣واﺋﻞ 
+77
+ﻗﺼﺎص واﺋﻞAABU
+78
+ﻗﺼﺎص واﺋﻞAABU
+First exam , Tus. 31-10-2006  from 2:00 to 2:50
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٠٤واﺋﻞ 
+79
+ﻗﺼﺎص واﺋﻞAABU
+Building Functions from Logic Gates
+We've already seen how to implement truth tables
+using AND, OR, and NOT --an example of 
+combinational logic.
+Combinational Logic Circuit
+• output depends only on the current inputs
+• stateless
+Sequential Logic Circuit
+• output depends on the sequence of inputs (previous inputs and 
+present inputs)
+• stores information (state) from past inputs
+80
+ﻗﺼﺎص واﺋﻞAABU
+Chapter 4.
+Combinational Circuits
+A combinational circuit consists of :
+1-Input variables.
+2-Logic gates
+3-Output variables
+Logic gates accepts signals ( Binary signals) from inputs 
+and generate signals to the outputs.
+Combinational
+Logic 
+Circuit
+n inputs m outputs
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ١٤واﺋﻞ 
+81
+ﻗﺼﺎص واﺋﻞAABU
+Design Procedure
+To design  a combinational circuit, the following steps are 
+used:
+1. The problems in stated
+2. The number of inputs and outputs are determined
+3. Assigning letter symbols to each input and output
+4. Building the Truth table, which defines the relationship 
+between inputs and outputs, ( and the don’t care 
+conditions).
+5. Simplifying the truth table.
+6. Drawing the logic diagram.
+82
+ﻗﺼﺎص واﺋﻞAABU
+Adders
+Let us implement what we learned in the previous slide 
+and build a combinational circuit that adds two binary 
+numbers.
+1.State the problem: Build a circuit that can add two 
+binary numbers ( HALF ADDER)
+0+0= 0
+0+1=1
+1+0=1
+1+1=10
+2. Number of inputs is two , Number of outputs derived is 
+also two.
+3. Let us name the inputs as X, Y, and the outputs as S for 
+Sum, and C for Carry_out.
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٢٤واﺋﻞ 
+83
+ﻗﺼﺎص واﺋﻞAABU
+0111
+1001
+1010
+0000
+SCyx
+4. Truth table
+5. Simplification:
+C = x.y( No more simplification)
+S = x.y’ + x’y
+= x + y
+84
+ﻗﺼﺎص واﺋﻞAABU
+6. Draw logic diagram
+X
+Y
+C
+S
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٣٤واﺋﻞ 
+85
+ﻗﺼﺎص واﺋﻞAABU
+Full ADDER: Build a circuit that can Add three binary 
+numbers.
+86
+ﻗﺼﺎص واﺋﻞAABU
+Subtractors
+Half Subtractor
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٤٤واﺋﻞ 
+87
+ﻗﺼﺎص واﺋﻞAABU
+Full Subtractor
+X-Y – Z         BD
+0 – 0 – 0  =     0 0
+0 – 0 -1  =     1 1
+0 – 1 – 1 =      1 0
+1 -1 -0  =       0 0
+1 -1 – 1  =       1 1
+88
+ﻗﺼﺎص واﺋﻞAABU
+Code Conversion
+We studied before different coding techniques for 
+numbers or alphanumarics, such as BCD, Excess_3 ,…
+Let  us build a combinational circuit that can convert from 
+BCD to Excess_3.
+1.BCD code and Excess_3 code are used to represent a 
+decimal digit in binary, each code represntsthe 
+decimal digit as 4 bits.
+2.Let us name the BCD input variables as A,B,C,D , and 
+the output Excess_3 variables as w,x,y,z.
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٥٤واﺋﻞ 
+89
+ﻗﺼﺎص واﺋﻞAABU
+Truth table
+Decimal
+_______
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+Ex_3
+wxyz
+0011
+0100
+0101
+0110
+0111
+1000
+1001
+1010
+1011
+1100
+BCD
+ABCD
+0000
+0001
+0010
+0011
+0100
+0101
+0110
+0111
+1000
+1001
+We also have don’t care conditions 
+in this example, 1010, 
+1011,1100,1101, 1110,1111 are 
+not accepted codes in BCD, which 
+so can be considers as don’t care.
+d(A,B,C,D)=Σ(10,11,12,13,14,15) 
+for all outputs.
+90
+ﻗﺼﺎص واﺋﻞAABU
+Simplify the function for each output.
+w x
+y z
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٦٤واﺋﻞ 
+91
+ﻗﺼﺎص واﺋﻞAABU
+Ex-3 to BCD
+92
+ﻗﺼﺎص واﺋﻞAABU
+4.6 Analysis procedure
+Analysis of combinational circuit to find the boolean
+function from the logic diagram.
+1.Label the output of all gates , that are connected to 
+input variables
+2.Label other gates, and find the function of the these 
+gates
+3.Repeat the process until you reach the output
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٧٤واﺋﻞ 
+93
+ﻗﺼﺎص واﺋﻞAABU
+Example
+94
+ﻗﺼﺎص واﺋﻞAABU
+Derivation of truth table
+To derive the truth table for a given logical diagram 
+•First label the output of each gate 
+•Write the function of each label, using the labels of the 
+previous gates
+•Then after putting all possible input combinations , start 
+to find the output of each level going from input side.
+•Repeat the for the next levels until you reach the output.
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٨٤واﺋﻞ 
+95
+ﻗﺼﺎص واﺋﻞAABU
+Q 4.14 
+BCD to 7 segment display.
+1.Build the truth table for each segment
+2.Minimize the function of each segment, ( use the don ’t 
+care conditions)
+96
+ﻗﺼﺎص واﺋﻞAABU
+MSI and LSI 
+MSI : Medium Scale Integrated circuit, < 50 gate in one IC
+LSI : Large Scale Integrated circuit > 50 gate in one IC
+VLSI : Very Large Scale Integrated circuit.
+Ex. 
+• 4 bit full adder
+• BCD to 7 segment decoder
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٩٤واﺋﻞ 
+97
+ﻗﺼﺎص واﺋﻞAABU
+Four-bit Adder
+98
+ﻗﺼﺎص واﺋﻞAABU
+Examples using MSI circuits
+•Using 4 bit full adder as a BCD to Ex-3 converter
+•Using the 4 bit full adder as an Ex_3 to BCD converter
+•Using 4 bit full adder as a 4 bit subtractor
+•Using 4 bit full adder as an adder and a subtractor
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٠٥واﺋﻞ 
+99
+ﻗﺼﺎص واﺋﻞAABU
+Building a BCD ADDER
+The BCD  adder should have 9 inputs, and 5 outputs.
+Trying to build a truth table for this is not a good idea
+(number of possible states for inputs is 29 =512.
+We also will have many don’t care states.
+The other solution is to use 4bit full adders with a small 
+combinational circuit
+Things to take into consideration
+1.If the sum of the 2 BCD numbers is <= 9 , no problem in 
+the result
+2.If the sum was greater than 9, it will not be in the BCD 
+format, we need to correct the result
+100
+ﻗﺼﺎص واﺋﻞAABU
+0101 0101
+0100 0111
+1001=9 1100  = 12 , 
+but we write 12 in BCD as 0001 0010
+Another case ( worst one)
+1001
+1001
+10010 =18
+Again , in BCD 18 is 0001 1000
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ١٥واﺋﻞ 
+101
+ﻗﺼﺎص واﺋﻞAABU
+The solution:
+If the resulting sum is >9 we need to correct the sum by 
+adding 6= 0110
+We have two cases 
+1)The answer between 1010 and 1111 , with carry =0
+2)The carry out is 1 , which means that the sum is > 15
+102
+ﻗﺼﺎص واﺋﻞAABU
+4 bit Magnitude comparator
+We need to build a combinational circuit that compares 
+two numbers ,
+The circuit will have 3 outputs 
+A>B
+A<B
+A=B
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٢٥واﺋﻞ 
+103
+ﻗﺼﺎص واﺋﻞAABU
+Decoder
+n inputs, 2n outputs
+• exactly one output is 1 for each possible input pattern
+2-bit
+decoder
+104
+ﻗﺼﺎص واﺋﻞAABU
+Decoder
+n inputs, 2n outputs
+A
+B
+Y0 1
+Y1
+Y2
+Y3
+0
+0
+0
+1
+1
+1
+0 1
+1
+1
+1
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٣٥واﺋﻞ 
+105
+ﻗﺼﺎص واﺋﻞAABU
+3x8 Decoder
+Implement combinational circuits using a decoder , OR 
+gates
+Ex. Full adder, using 3x8 decoder
+106
+ﻗﺼﺎص واﺋﻞAABU
+Inverted output decoder
+Why we build a decoder using NAND gates?
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٤٥واﺋﻞ 
+107
+ﻗﺼﺎص واﺋﻞAABU
+Decoder with Enable
+E
+If E=1 , else 
+all outputs 
+are zeros
+108
+ﻗﺼﺎص واﺋﻞAABU
+Building an 3x8 decoder using 2x4 decoders with enable
+2x4
+A
+B
+Y0
+Y1
+Y2
+Y3
+2x4
+A
+B
+Y0
+Y1
+Y2
+Y3
+X
+Y
+Z
+3x8
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٥٥واﺋﻞ 
+109
+ﻗﺼﺎص واﺋﻞAABU
+4x16 Decoder  using 2x4 decoders
+A
+B
+C
+D
+y0
+y15
+110
+ﻗﺼﺎص واﺋﻞAABU
+Build larger decoders
+How can we build a 4x16 decoder using 3x8 decoders
+3x8 D0-D7
+3x8 D8-D15
+D0-D15
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٦٥واﺋﻞ 
+111
+ﻗﺼﺎص واﺋﻞAABU
+Demultiplexer
+2x4 decoder
+With Enable
+D0
+D1
+D2
+D3
+A
+B
+E
+1x4 
+demultiplexer
+D0
+D1
+D2
+D3
+input
+S1   S0
+A demultiplexeris a combinational circuit that sends the 
+input to the output selected by selection lines.
+A demultiplexercan be seen as a decoder with enable.
+112
+ﻗﺼﺎص واﺋﻞAABU
+Encoder
+An Encoder is a digital function that produces a reverse 
+operation for that of a decoder.   
+2n x n encoder , has 2n inputs and n outputs
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٧٥واﺋﻞ 
+113
+ﻗﺼﺎص واﺋﻞAABU
+Multiplexer (MUX)
+n-bit selector and 2n inputs, one output
+• output equals one of the inputs, depending on selector
+4-to-1 MUX
+114
+ﻗﺼﺎص واﺋﻞAABU
+Multiplexer (MUX)
+n-bit selector and 2n inputs, one output
+S1 S0
+I0
+I1
+I2
+I3
+0  0
+01
+0  1
+1
+1
+0
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٨٥واﺋﻞ 
+115
+ﻗﺼﺎص واﺋﻞAABU
+116
+ﻗﺼﺎص واﺋﻞAABU
+Quadruple 2x1 Mux
+If we have 2 binary numbers A & B, each is 4 bit and 
+we need to select one of the two numbers.
+We need 4 (2x1) MUXs, or a Quad 2x1 muxwith one 
+selection line .
+A0
+Y0 Y1 Y2 Y3
+A1 A2 A3 B0 B1 B2 B3
+S
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٩٥واﺋﻞ 
+117
+ﻗﺼﺎص واﺋﻞAABU
+MUX to implement booleanfunctions.
+We saw before how to implement a booleanfunction using 
+decoders.
+We can also implement this using a mux
+1. If we have a function with n variables we need a MUX 
+with n-1 selection lines ( 2n-1 MUX) 
+2. Find the implementation table, then draw the circuit
+Ex. for  F(x,y,z)=Σ(1,3,5,6)
+I0 I1 I2 I3
+X’ 0 1 2 3
+X 4 5 6 7
+0 1 X X’
+118
+ﻗﺼﺎص واﺋﻞAABU
+4x1
+MUX
+Output
+I0
+I1
+I2
+I3
+0
+1
+X
+X’
+Y          Z
+S1 S0
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٠٦واﺋﻞ 
+119
+ﻗﺼﺎص واﺋﻞAABU
+Implement the booleanfunction 
+F(w,x,y,z)=Σ(0,1,3,4,8,9,15)  using Multiplexer
+120
+ﻗﺼﺎص واﺋﻞAABU
+ROM
+Types:
+ROM
+PROM
+EPROM
+EEPROM
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ١٦واﺋﻞ 
+121
+ﻗﺼﺎص واﺋﻞAABU
+HOW ROM works
+It consists of a decoder and OR gates.
+In general Memory has address and Data lines.
+We call a ROM with n address lines and m data lines 2nxm  
+memory
+This memory has 2n words, each word is m bits
+2nxm 
+ROM
+n inputs m outputs
+122
+ﻗﺼﺎص واﺋﻞAABU
+Decoder3
+8 x 4 bit Memory
+0  0010
+1  0101
+2  0000
+3  1111
+4  0010
+5  0101
+6  1011
+7  0011
+D3         D2          D1          D0
+001
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٢٦واﺋﻞ 
+123
+ﻗﺼﺎص واﺋﻞAABU
+From the previous discussion its clear that each output of 
+the ROM represents a SOP 
+Ex. 
+D0= Σ(1,3,5,6,7)
+D1= Σ(0,3,4,6,7)
+D2=
+D3=
+124
+ﻗﺼﺎص واﺋﻞAABU
+Another example
+Assume we want to build the Following Cktthat has two 
+inputs and three outputs
+F0 (A1,A0) =Σ(1,3)
+F1 (A1,A0) = Σ(0,3)
+F2 (A1,A0) = Σ(0,1,2)
+We can build this Cktusing a 4x3 ROM = 2 2 x 3 bit ROM
+This ROM is built from a decoder, OR gates
+2 x 4 
+Decoder
+A1
+A0
+4 x 3
+ROM
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٣٦واﺋﻞ 
+125
+ﻗﺼﺎص واﺋﻞAABU
+Q. What is the Data stored in this ROM?
+126
+ﻗﺼﺎص واﺋﻞAABU
+BCD to Ex.3 Converter
+What is the size of the ROM needed?
+What will be the data stored?
+BCD to 7 segment Converter
+What is the size of the ROM needed?
+What will be the data stored?
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٤٦واﺋﻞ 
+127
+ﻗﺼﺎص واﺋﻞAABU
+Combinational vs. Sequential
+Combinational Circuit
+• always gives the same output for a given set of inputs
+Øex: adder always generates sum and carry,
+regardless of previous inputs
+Sequential Circuit
+• stores information
+• output depends on stored information (state) plus input
+Øso a given input might produce different outputs,
+depending on the stored information
+• example: ticket counter
+Øadvances when you push the button
+Øoutput depends on previous state
+• useful for building “memory” elements and “state machines”
+128
+ﻗﺼﺎص واﺋﻞAABU
+Sequential Logic
+Synchronous sequential circuits:
+A system whose behavior can be defined form the 
+knowledge of its signals at discrete instants of time.
+Asynchronous sequential circuits: a system whose 
+behavior depends on the order which its input signals 
+changes at any instance of time
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٥٦واﺋﻞ 
+129
+ﻗﺼﺎص واﺋﻞAABU
+130
+ﻗﺼﺎص واﺋﻞAABU
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٦٦واﺋﻞ 
+131
+ﻗﺼﺎص واﺋﻞAABU
+Flip Flops
+132
+ﻗﺼﺎص واﺋﻞAABU
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٧٦واﺋﻞ 
+133
+ﻗﺼﺎص واﺋﻞAABU
+134
+ﻗﺼﺎص واﺋﻞAABU
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٨٦واﺋﻞ 
+135
+ﻗﺼﺎص واﺋﻞAABU
+R-S Latch: Simple Storage Element
+R is used to “reset” or “clear” the element – set it to zero.
+S is used to “set” the element – set it to one.
+If both R and S are one, out could be either zero or one.
+• “quiescent” state --holds its previous value
+• note: if a is 1, b is 0, and vice versa
+1
+0
+1
+1
+1
+1
+0
+0
+1
+1
+0
+0
+1
+1
+136
+ﻗﺼﺎص واﺋﻞAABU
+Clearing the R-S latch
+Suppose we start with output = 1, then change R to zero.
+Output changes to zero.
+Then set R=1 to “
+store”
+ value in quiescent state.
+1
+0
+1
+1
+1
+1
+0
+0
+1
+0
+1
+0
+0
+0
+1
+1
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٩٦واﺋﻞ 
+137
+ﻗﺼﺎص واﺋﻞAABU
+Setting the R-S Latch
+Suppose we start with output = 0, then change S to zero.
+Output changes to one.
+Then set S=1 to “
+store”
+ value in quiescent state.
+1
+1
+0
+0
+1
+1
+0
+1
+1
+1
+0
+0
+138
+ﻗﺼﺎص واﺋﻞAABU
+R-S Latch Summary built by NAND
+R = S = 1
+• hold current value in latch
+S = 0, R=1
+• set value to 1
+R = 0, S = 1
+• set value to 0
+R = S = 0
+• both outputs equal one
+• final state determined by electrical properties of gates
+• Don’
+t do it!
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٠٧واﺋﻞ 
+139
+ﻗﺼﺎص واﺋﻞAABU
+Gated D-Latch
+Two inputs: D (data) and WE (write enable)
+• when WE = 1, latch is set to value of D
+ØS = NOT(D), R = D
+• when WE = 0, latch holds previous value
+ØS = R = 1
+140
+ﻗﺼﺎص واﺋﻞAABU
+Characteristic equations
+Remember that the output 
+depends on the inputs and the 
+current state.
+• First find the characteristic 
+table 
+• Then derive the characteristic 
+equation for the RS flip flop.
+X111
+1011
+0101
+1001
+X110
+1010
+0100
+0000
+Qt+1RSQt
+1X01
+1X00
+Q(t+1)=S+R’Q
+Q
+SR
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ١٧واﺋﻞ 
+141
+ﻗﺼﺎص واﺋﻞAABU
+Characteristic equation for D flip flop
+111
+001
+110
+000
+Qt+1DQt
+10
+10
+Q(t+1)=D
+142
+ﻗﺼﺎص واﺋﻞAABU
+J K flip flop
+It’s a refinement of RS flip flop , that defined the 
+indeterminate states in RS.
+In RS flip flop the state 11 is not allowed , 
+In JK flip flop the state 11 makes the flip flop changes 
+(switches) its output.
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٢٧واﺋﻞ 
+143
+ﻗﺼﺎص واﺋﻞAABU
+S3S2S1S0
+1010
+1011
+1100
+1101
+1110
+1111
+S>=9 : Cout+S3S2+S3S1
+1100
+1111
+0000
+0000
+S3S2
+S1S0
+144
+ﻗﺼﺎص واﺋﻞAABU
+Problem in JK flip flop:
+•When J=1 ,K=1  and the clock is 1 , Qt+1=Q’t
+•Assume Q=1, it will flip to 0 then to 1 then to 0 and so on 
+as long as the clock is 1.
+•To avoid that the clock pulse (duration) must be less than 
+the propagation delay of the Flip flop.
+•But this is not a solution.
+•The solution is to build a Master slave or edge triggered 
+construction.
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٣٧واﺋﻞ 
+145
+ﻗﺼﺎص واﺋﻞAABU
+Characteristic table and Equation
+0111
+1011
+0101
+1001
+1110
+1010
+0100
+0000
+Qt+1KJQt
+1001
+1100
+Q
+JK
+Q(t+1)=JQ’+K’Q
+146
+ﻗﺼﺎص واﺋﻞAABU
+T flip flop
+It’s a single input version of the JK Flip flop
+T flip Flop has the same
+Problem of JK when T=1
+011
+101
+110
+000
+Qt+1TQt
+01
+10
+Q(t+1)=TQ’+T’Q
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٤٧واﺋﻞ 
+147
+ﻗﺼﺎص واﺋﻞAABU
+148
+ﻗﺼﺎص واﺋﻞAABU
+Master Slave D flip flop
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٥٧واﺋﻞ 
+149
+ﻗﺼﺎص واﺋﻞAABU
+150
+ﻗﺼﺎص واﺋﻞAABU
+Master Slave RS flip flop
+S
+Master
+R
+S
+Slave
+R
+Q
+Q’
+S
+R
+CP
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٦٧واﺋﻞ 
+151
+ﻗﺼﺎص واﺋﻞAABU
+1
+2
+3
+4
+152
+ﻗﺼﺎص واﺋﻞAABU
+When CLK = 0 , gates 2,3 are not working,gate2=1. 
+gate3=1 è R=1,S=1
+èNo change in the output.
+If D=0; Gate 4=1, Gate1 =0.
+If D=1; Gate 4=0, Gate1 =1.
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٧٧واﺋﻞ 
+153
+ﻗﺼﺎص واﺋﻞAABU
+IF D=0è Gate1=0,Gate4=1,Gate2=1,Gate3=1;
+and CLK goes to 1
+Gate 4=1, Gate 3=0, Gate1=0;Gate 2=1;
+After the CLK being 1, if D changed to 1, this will not affect 
+on Gate 4 , nor any other gates.
+154
+ﻗﺼﺎص واﺋﻞAABU
+IF D=1è Gate1=1,Gate4=0,Gate2=1,Gate3=1;
+and CLK goes to 1
+Gate 4=0, Gate 3=1, Gate1=1;Gate 2=0;
+After the CLK being 1, if D changed to 0, Gate 4 =1 , other 
+gates will not affect by this change.
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٨٧واﺋﻞ 
+155
+ﻗﺼﺎص واﺋﻞAABU
+156
+ﻗﺼﺎص واﺋﻞAABU
+JK flip Flop from D flip flop
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٩٧واﺋﻞ 
+157
+ﻗﺼﺎص واﺋﻞAABU
+158
+ﻗﺼﺎص واﺋﻞAABU
+Analysis of sequential circuit
+The behavior of a seq. cktis determined form 
+a)Inputs
+b)Outputs
+c)States of its flip flop
+Both outputs and next state are function of input and 
+present state.
+From a seq. cktdiagram , we will find the 
+a)state table
+b)State diagram
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٠٨واﺋﻞ 
+159
+ﻗﺼﺎص واﺋﻞAABU
+Example
+R     Q’
+S     Q
+R     Q’
+S      Q
+X
+A
+Y
+CP
+A
+A’
+B
+B’
+B
+B’
+A’
+A
+160
+ﻗﺼﺎص واﺋﻞAABU
+State Table
+00111011
+10001010
+00011101
+00010000
+YYABABAB
+X=1X=0X=1X=0
+OutputNext statePresent 
+State
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ١٨واﺋﻞ 
+161
+ﻗﺼﺎص واﺋﻞAABU
+State diagram
+The state table can be represented graphically using the state diagram.
+Transition from a state to state is shown as arrow labeled with two 
+values (Input/output)
+00
+01
+11
+10
+162
+ﻗﺼﺎص واﺋﻞAABU
+State equation
+State equation (or application equation) is an expression 
+that shows the relation for the next state of each flip flop 
+as a function of the present state and the inputs, 
+Method 1: using the characteristic equation of the flip flop 
+A(t+1) =S+R’Q
+= X’.B+ (X.B’)’A
+= X’.B+(X’+B).A
+= X’B+X’.A+A.B
+B(t+1) = S+R’Q
+= X.A’+(X’A)’.B
+= X.A’+X.B+A’.B
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٢٨واﺋﻞ 
+163
+ﻗﺼﺎص واﺋﻞAABU
+State equation
+Method 2:
+From the state table.
+A(t+1) = (A’B+AB’+AB).X’ + ABX
+=A’BX’+AB’X’+ABX’ +ABX
+=BX’+AX’+AB
+164
+ﻗﺼﺎص واﺋﻞAABU
+6.7 Design procedure
+1.Build the state diagram
+2.Build the state table
+3.Assign  binary values for each state
+4.Determine the number of flip flops needed and assign a 
+symbol for each flip flop
+5.Choose the type of flip flop to be used (we will use JK)
+6.From the state table derive the excitation and output 
+tables
+7.Simplify the flip flop functions
+8.Draw the logic diagram
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٣٨واﺋﻞ 
+165
+ﻗﺼﺎص واﺋﻞAABU
+The following formulas for JK flip flop inputs will help us
+Qt Qt+1
+0 to 0   J=0, K=X ( don’t care)
+0 to 1   J=1, K=X
+1 to 0   J=X, K=1
+1 to 1   J=X, K=0
+166
+ﻗﺼﺎص واﺋﻞAABU
+Excitation tables for Flip Flops
+0X11
+1001
+0110
+X000
+RSQt+1Qt
+RS
+0X11
+1X01
+X110
+X000
+KJQt+1Qt
+JK
+111
+001
+110
+000
+DQt+1Qt
+D
+011
+101
+110
+000
+TQt+1Qt
+T
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٤٨واﺋﻞ 
+167
+ﻗﺼﺎص واﺋﻞAABU
+Example 1
+Design a circuit that works as a counter from 0 to 3 if the 
+input x is 1 and stay in the same state if x is 0
+01
+10
+00
+11
+1
+1 1
+1
+0
+0
+0
+0
+168
+ﻗﺼﺎص واﺋﻞAABU
+Example 0
+Design a counter that counts from 3 down to 0 one step 
+on each clock
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٥٨واﺋﻞ 
+169
+ﻗﺼﺎص واﺋﻞAABU
+State table
+X=0 X=1
+AB AB AB
+00 00 01
+01 01 10
+10 10 11
+11 11 00
+We have 4 states so we need 2 flip flops
+170
+ﻗﺼﺎص واﺋﻞAABU
+Excitation table
+Next state flip flop inputs
+A B X A B JA KA JB KB
+0 0  0 0 0 0 X 0 X
+0 0  1 0 1 0 X 1 X
+0 1  0 0 1 0 X X 0
+0 1  1 1 0 1 X X 1
+1 0  0 1 0                 X 0 0 X
+1 0  1 1 1 X 0 1 X
+1 1  0 1 1 X 0 X 0
+1 1  1 0 0 X 1 X 1
+Now we need to simplify the equation of each flip flop 
+input
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٦٨واﺋﻞ 
+171
+ﻗﺼﺎص واﺋﻞAABU
+Xxxx
+0100
+0100
+Xxxx
+xx10
+Xx10
+01xx
+01xx
+JA=Bx KA=Bx
+JB=x KB=x
+172
+ﻗﺼﺎص واﺋﻞAABU
+Example 2
+Design a circuit that works as a down counter from 3 
+down to 0 if the input x is 1 and stay in the same state if 
+x is 0
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٧٨واﺋﻞ 
+173
+ﻗﺼﺎص واﺋﻞAABU
+Example 3
+Design a sequential Cktthat generate the following 
+sequence 000, 001, 010,100 , using JK flip flops
+This circuit has 4 states 
+01
+10
+00
+11
+1
+1 1
+1
+174
+ﻗﺼﺎص واﺋﻞAABU
+Example 4
+Repeat example 1 using RS flip flop
+1) How RS Flip flop works
+0 to 0   S=0, R=X ( don’t care)
+0 to 1   S=1, R=0
+1 to 0   S=0, R=1
+1 to 1   S=X, R=0
+2) Build the Excitation table, then simplify the equations 
+that represents R and S for each flip flop.
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٨٨واﺋﻞ 
+175
+ﻗﺼﺎص واﺋﻞAABU
+Excitation table
+Next state flip flop inputs
+A B X A B SA RA SB RB
+0 0  0 0 0 0 X 0 X
+0 0  1 0 1 0 X 1 0
+0 1  0 0 1 0 X X 0
+0 1  1 1 0 1 0 0 1
+1 0  0 1 0                 X 0 0 X
+1 0  1 1 1 X 0 1 0
+1 1  0 1 1 X 0 X 0
+1 1  1 0 0 0 1 0 1
+Now we need to simplify the equation of each flip flop 
+input
+176
+ﻗﺼﺎص واﺋﻞAABU
+X0XX
+0100
+0100
+X0XX
+X010
+X010
+010x
+010x
+SA= RA=
+SB= RB=
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٩٨واﺋﻞ 
+177
+ﻗﺼﺎص واﺋﻞAABU
+Example 5
+Design an up_downcounter that counts from 0 to 6, 
+depending on the input value, if x=0 it counts down, if 1 it 
+counts up
+001
+010
+011
+100
+101
+000
+110
+178
+ﻗﺼﺎص واﺋﻞAABU
+We have a small problem here.
+What if the counter started with 111 ?
+We need to move it to one of the valid states,
+To 000 for example
+001
+010
+011
+100
+101
+000
+111
+110
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٠٩واﺋﻞ 
+179
+ﻗﺼﺎص واﺋﻞAABU
+Non-Standard Counters
+•Counters are sometimes defined that count in an 
+order other than standard numerical order.
+•The state machine below is for a gray code counter 
+in which one bit changes at a time.
+180
+ﻗﺼﺎص واﺋﻞAABU
+3 bit binary counter
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ١٩واﺋﻞ 
+181
+ﻗﺼﺎص واﺋﻞAABU
+182
+ﻗﺼﺎص واﺋﻞAABU
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٢٩واﺋﻞ 
+183
+ﻗﺼﺎص واﺋﻞAABU
+Complete Example
+A blinking traffic sign
+• No lights on
+• 1 & 2 on
+• 1, 2, 3, & 4 on
+• 1, 2, 3, 4, & 5 on
+• (repeat as long as switch
+is turned on)
+• When the input is 0 , No lights on
+DANGER
+MOVE
+RIGHT
+1
+2
+3
+4
+5
+184
+ﻗﺼﺎص واﺋﻞAABU
+Traffic Sign State Diagram
+State bit S1 State bit S0
+Switch on
+Switch off
+Outputs
+Transition on each clock cycle.
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٣٩واﺋﻞ 
+185
+ﻗﺼﺎص واﺋﻞAABU
+Combinational CktSequential CktX
+State Output
+186
+ﻗﺼﺎص واﺋﻞAABU
+Traffic Sign Truth Tables
+Outputs
+(depend only on state: S1S0)
+11111
+01101
+00110
+00000
+XYZS0S1
+Lights 1 and 2
+Lights 3 and 4
+Light 5
+Next State: S1’S0’
+(depend on state and input)
+00111
+11011
+01101
+10001
+0
+In
+00XX
+S0’S1’S0S1
+Switch
+Whenever In=0, next state is 00.
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٤٩واﺋﻞ 
+187
+ﻗﺼﺎص واﺋﻞAABU
+2 input Sequential Ckts
+Q. Build a counter that counts from 0 to 3, this counter 
+has two inputs X,Y, 
+XY
+00Reset the counter  ( go to state 00)
+01 Count forward
+10 Counts backward
+11 No change
+188
+ﻗﺼﺎص واﺋﻞAABU
+We have 4 states è we need two flip flops
+We have 2 inputs è each state has 4 transitions
+01
+10
+00
+11
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٥٩واﺋﻞ 
+189
+ﻗﺼﺎص واﺋﻞAABU
+State table
+1 1
+1 0
+0 1
+0 0
+XY=11
+A B
+XY=10
+A B
+XY=01
+A B
+XY=00
+A B
+Present state
+A B
+Next state
+190
+ﻗﺼﺎص واﺋﻞAABU
+Excitation table
+1111
+1110
+1101
+1100
+1011
+1010
+1001
+1000
+0111
+0110
+0101
+0100
+0011
+0010
+0001
+0000
+TBTAABXYAB
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٦٩واﺋﻞ 
+Chapter 7
+Registers, Counters, and Memory units
+192
+ﻗﺼﺎص واﺋﻞAABU
+Gated D-Latch
+Two inputs: D (data) and WE (write enable)
+• when WE = 1, latch is set to value of D
+ØS = NOT(D), R = D
+• when WE = 0, latch holds previous value
+ØS = R = 1
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٧٩واﺋﻞ 
+193
+ﻗﺼﺎص واﺋﻞAABU
+Register
+A register stores a multi-bit value.
+• We use a collection of D-latches, all controlled by a common WE.
+• When WE=1, n-bit value D is written to register.
+194
+ﻗﺼﺎص واﺋﻞAABU
+4 bit register
+Q
+D
+A0
+I0
+Q
+D
+A1
+Q
+D
+A2
+I2
+Q
+D
+A3
+I1I3
+Clock
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٨٩واﺋﻞ 
+195
+ﻗﺼﺎص واﺋﻞAABU
+Register with 
+parallel load
+196
+ﻗﺼﺎص واﺋﻞAABU
+4 bit Shift right register
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٩٩واﺋﻞ 
+197
+ﻗﺼﺎص واﺋﻞAABU
+Serial 
+Transfer
+198
+ﻗﺼﺎص واﺋﻞAABU
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٠٠١واﺋﻞ 
+199
+ﻗﺼﺎص واﺋﻞAABU
+Serial Adder
+200
+ﻗﺼﺎص واﺋﻞAABU
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ١٠١واﺋﻞ 
+201
+ﻗﺼﺎص واﺋﻞAABU
+Ripple 
+counter
+202
+ﻗﺼﺎص واﺋﻞAABU
+4 bit ribblecouter(JK)
+Q     J
+K
+1
+1
+Clk
+Q     J
+K
+1
+1
+Clk
+Q     J
+K
+1
+1
+Clk
+Q     J
+K
+1
+1
+Clk
+A0A1A2A3
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٢٠١واﺋﻞ 
+203
+ﻗﺼﺎص واﺋﻞAABU
+Decimal counter
+204
+ﻗﺼﺎص واﺋﻞAABU
+BCD Ripple 
+counter
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٣٠١واﺋﻞ 
+205
+ﻗﺼﺎص واﺋﻞAABU
+•In BCD counter the first digit flips with the clock,
+•The second digit flips depending on the first digit a clock 
+if the number is less than 8, since J is connected to Q8’
+•When Q8 becomes 1, J will be 0, this will clear Q2.
+•BUT this will take effect only after Q0 goes from 1 to 0.
+•What about J8
+206
+ﻗﺼﺎص واﺋﻞAABU
+MSI 4 bit counter with Parallel load
+I0 A0
+I1 A1
+I2 A2
+I3 A3
+Load
+Clock
+Clear
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٤٠١واﺋﻞ 
+207
+ﻗﺼﺎص واﺋﻞAABU
+Using an MSI Binary counter , Build a BCD counter
+•As you know, BCD counter goes to 0 after 9.
+•All what we want to do is to load 0 if the counter value is 9
+I0 A0
+I1 A1
+I2 A2
+I3 A3
+Load
+Clock
+0
+208
+ﻗﺼﺎص واﺋﻞAABU
+Build a counter that counts from 0 to 6
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٥٠١واﺋﻞ 
+209
+ﻗﺼﺎص واﺋﻞAABU
+Build a counter that counts from 5 to 13
+210
+ﻗﺼﺎص واﺋﻞAABU
+Johnson counter
+Self read.
+Required for the exam.
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٦٠١واﺋﻞ 
+211
+ﻗﺼﺎص واﺋﻞAABU
+Memory Unit
+•A memory unit stores binary information in groups called 
+words. Each is n bits.
+•Memory size is the number of locations (words) that a 
+memory have.
+•A memory word ( which contains binary numbers) is used 
+to represent an Instruction, Number, Character,…
+•MAR
+•MDR
+Memory
+M
+A
+R
+MDR
+Read
+Write
+212
+ﻗﺼﺎص واﺋﻞAABU
+Binary Cell & RAM
+BC
+Select
+Output
+Read/Write
+input
+R
+S    Q
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
+  ﻗﺼﺎص ٧٠١واﺋﻞ 
+213
+ﻗﺼﺎص واﺋﻞAABU
+PDF created with pdfFactory trial version www.pdffactory.com
+--- Page Break ---
