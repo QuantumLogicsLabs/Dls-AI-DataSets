@@ -1,0 +1,262 @@
+Teaching Digital Logic and Computer Architecture Using
+Open Source Tools
+Bill Siever
+Michael Hall
+James Feher
+Roger Chamberlain
+Bill Siever, Michael Hall, James Feher, and Roger Chamberlain, “Teaching
+Digital Logic and Computer Architecture Using Open Source Tools,” in Proc.
+of 22nd ACM International Conference on Computing Frontiers Workshops
+and Special Sessions, May 2025, pp. 53-56.
+DOI: 10.1145/3706594.3726971
+Presented at 3rd Open Source Hardware Workshop (OSHW), Cagliari,
+Sardinia, Italy.
+Dept. of Computer Science and Engineering
+and
+Dept. of Electrical and Systems Engineering
+Washington University in St. Louis
+
+--- Page Break ---
+
+Teaching Digital Logic and Computer Architecture Using Open
+Source Tools
+Bill Siever Michael Hall
+Washington University in St. Louis Washington University in St. Louis
+St. Louis, Missouri, USA St. Louis, Missouri, USA
+bsiever@gmail.com mhall24@wustl.edu
+James Feher Roger Chamberlain
+Washington University in St. Louis Washington University in St. Louis
+St. Louis, Missouri, USA St. Louis, Missouri, USA
+jdfeher@wustl.edu roger@wustl.edu
+Figure 1: Full adder visual simulation.
+Abstract ACM Reference Format:
+Bill Siever, Michael Hall, James Feher, and Roger Chamberlain. 2025. Teach-
+A recent redesign of the digital logic and computer architecture
+ing Digital Logic and Computer Architecture Using Open Source Tools. In
+courses at Washington University in St. Louis exploits developer
+22nd ACM International Conference on Computing Frontiers (CF Companion
+containers and open source tools to provide students with a low-
+’25), May 28–30, 2025, Cagliari, Italy. ACM, New York, NY, USA, 4 pages.
+cost, portable tool suite for hardware design. Here, we describe the
+https://doi.org/10.1145/3706594.3726971
+tool flow used by the students and articulate the motivation for and
+benefits from utilizing this approach.
+1 Introduction
+CCS Concepts In the fall semester of 2024, the McKelvey School of Engineering at
+• Hardware → Electronic design automation; • Software and Washington University in St. Louis engaged in a refresh of two of the
+its engineering → Open source model; • Social and profes- fundamental courses in the BS Computer Engineering program: the
+sional topics → Computer engineering education. introduction to digital logic course and the computer architecture
+course. As part of that refresh, we decided to make a serious attempt
+Keywords at using fully open source tools in the delivery of the course material.
+The resulting tool suite was the subject of a demo at this year’s
+Digital Logic, Computer Architecture, Field Programmable Gate Ar-
+Technical Symposium on Computer Science Education [16].
+rays, FPGAs, Developer Containers, Dev Containers, Visual Studio
+Both of these courses are required for computer engineering
+Code, VS Code, RISC-V
+students, digital logic (a sophomore level course) is required for
+electrical engineering students and is an optional technical elective
+Permission to make digital or hard copies of all or part of this work for personal or for computer science students, while computer architecture (typi-
+classroom use is granted without fee provided that copies are not made or distributed cally taken in the junior year) is an optional technical elective for
+for profit or commercial advantage and that copies bear this notice and the full citation
+on the first page. Copyrights for third-party components of this work must be honored. both electrical engineering and computer science students. Digital
+For all other uses, contact the owner/author(s). logic is taught both fall and spring (averaging just over 80 students
+CF Companion ’25, Cagliari, Italy per semester this past year) and computer architecture is taught in
+© 2025 Copyright held by the owner/author(s).
+ACM ISBN 979-8-4007-1393-4/25/05 the fall (with 25 students in the first offering since the refresh). As
+https://doi.org/10.1145/3706594.3726971 part of the refresh effort, each of the offerings of both courses have
+38
+
+--- Page Break ---
+
+CF Companion ’25, May 28–30, 2025, Cagliari, Italy Siever et al.
+had two instructors assigned, all of whom are co-authors on this 3 Tool Flow
+paper. Both the Department of Computer Science and Engineering Here we articulate the specific tools used in the design flow by the
+and the Department of Electrical and Systems Engineering share students, including containerization, design entry, HDL simulation,
+curricular responsibility for the computer engineering program and synthesis, place & route, FPGA deployment, ISA-level simulation,
+the contents of both courses. and high-level language compilation. The set of tools represents a
+In this paper, we describe the tool flow used by the students to broad spectrum of open source contributions by the community
+perform digital hardware design from design entry through simula- from around the world. The tool flow and hardware used rely heav-
+tion, synthesis, place & route, to deployment on an FPGA. Almost ily on ideas from Bell [1].
+100% of the infrastructure used to support this tool flow comes from
+the open source community, and the number of distinct tools is
+considerable. Detailed usage instructions are provided at [15]. 3.1 Containers
+The use of development containers (or dev containers for short) are
+central to the utility of the tool suite we have put together. One of
+2 Past Practice and Present Motivation
+the real challenges associated with supporting multiple execution
+Both of the two courses are fairly traditional in the topics covered platforms (e.g., Linux, Windows, MacOS) is the complexity associ-
+and their overall scope. The digital logic course covers binary num- ated with deploying a broad set of tools on each platform. Koskinen
+ber systems, Boolean algebra, combinational and sequential system et al. [ 7] describe how containers are used throughout software
+design, an introduction to a simple instruction set architecture, and engineering, and Pahl et al. [ 10 ] review the use of containers in the
+a basic fetch-execute engine. The computer architecture course cloud.
+covers single-cycle, multi-cycle, and pipelined implementations By deploying each of the tools described below in a dev container,
+of an instruction set architecture in addition to topics in memory there are three options for students to utilize the tool flow.
+subsystems (including virtual memory), I/O subsystems, and cache
+coherence protocols. (1) The entire tool flow can be executed in the cloud, with the
+Historically, these courses used VHDL as the hardware descrip- development environment accessed via a web browser.
+tion language and the Xilinx proprietary FPGA tool flow for design (2) The entire tool flow can be executed natively on the student’s
+and implementation of digital designs. A fresh redesign of the two local machine. As stated above, all of Linux, Windows, and
+courses was triggered by 3 concurrent events: (1) a long-serving MacOS are supported.
+member of the faculty who had taught both courses for a number (3) A blended execution option is available, in which the devel-
+of years retired, (2) the textbook used in the computer architecture opment environment is run locally, yet the individual tools
+course went out of print, and (3) the FPGA development boards are executed in the cloud.
+(used in both courses) were discontinued by the manufacturer.
+As part of the redesign, an early decision was to go in the di- The above options provide maximum flexibility for students, en-
+rection of open source tools, which motivated a number of the abling the tools to be used in a wide variety of contexts.
+follow-on decisions. The redesign team committed early to the use
+of the RISC-V instruction set architecture (given that both the ISA
+and any number of available designs are open source). Given the 3.2 Design Entry and HDL Simulation
+proliferation of RISC-V designs in SystemVerilog, and its support Early in the digital logic course, students use schematic capture for
+in the open source community, switching away from VHDL was design entry. They then move to the use of hardware description
+deemed appropriate. The above choices led us to the Harris and languages, specifically SystemVerilog. The computer architecture
+Harris text, Digital Design and Computer Architecture: RISC-V Edi- course explicitly uses SystemVerilog for design entry.
+tion [4], which we are now using in both courses (supplementing The schematic capture and simulation tool used is JLS: Java Logic
+with some additional material in the computer architecture course). Simulator. Originally authored by Poplawski [ 11], it has been up-
+The above decisions made, we were next challenged to put to- dated and binaries are provided for Windows and MacOS, as well as
+gether a tool flow guided by the following goals. First, authenticity, a generic JAR for all platforms [ 14]. Students use JLS for schematic-
+have students use contemporary tools and deploy their designs on level designs of both combinational and sequential circuits. They
+real hardware. Second, cost, use low-cost readily available hardware. can test the behavior and correctness of their work by applying
+Third, complexity, keep the installation and tool use overheads low. test vectors. Moreover, JLS can be used for automated unit tests on
+Fourth, focus, ensure the students are using their available cognitive student work.
+load on the subject matter of the course, not on the distractions Once development moves to SystemVerilog, the students use
+inherent in fully-featured commercial tools. Finally, portability, sup- an IDE, working extensively in VS Code with HDL support for
+port the variety of execution platforms used by students, specifically syntax highlighting, etc., by Hiramori [ 5]. Linting and simulation
+including Linux, Windows, and MacOS. A number of commercial is performed using Verilator [17] and/or Icarus Verilog [23].
+tools are limited in the platforms they support. An important component in the use of hardware description lan-
+The Harris and Harris text (and accompanying resource materi- guages is the utility of generating testbenches. Currently testbench
+als) support the Intel Quartus development environment, and we generation is all done via SystemVerilog; however, we are investi-
+explored the use of that tool suite, but ultimately decided that we gating the potential use of cocotb [2 ] to enable the development of
+wanted to go the open source route, driven by the above goals. testbenches using Python.
+39
+
+--- Page Break ---
+
+Teaching Digital Logic and Computer Architecture CF Companion ’25, May 28–30, 2025, Cagliari, Italy
+Figure 2: Synthesized full adder.
+3.3 Synthesis and Place & Route
+Synthesis and place & route use Yosys + nextpnr [13 , 24]. Once
+synthesized, DigitalJS [8] is used for visual interactive simulation
+(see Figure 1). By clicking on inputs, students can see the effects of
+the input changing through the circuit.
+Figure 2 shows the synthesized full adder. Note that this repre-
+sents a different implementation relative to the full adder of Figure 1,
+using different primitive gates.
+Figure 4: Wiring diagram for switch inputs (drawn using the
+3.4 Deployment to an FPGA
+fritzing [6] package).
+The physical FPGA board that we use is the open source UPduino
+platform [ 20 ]. The specific FPGA is a Lattice Semiconductor Ul-
+traPlus ICE40UP5K. The board, shown in Figure 3, features an
+on-board FPGA programmer, flash and LED with all 32 GPIO pins
+on 0.1" headers.
+Figure 3: UPduino Lattice UltraPlus iCE40 FPGA board [ 20].
+Figure 5: Digital I/O board.
+Image credit: Gregory Benjamin.
+Once a bitstream file has been created, it is loaded onto the
+UPduino using openFPGALoader [3], which has native installs for 3.5 RISC-V Tools
+Linux, Windows, and MacOS. When the development environment The digital logic course implements a subset of the RISC-V ISA on
+is running in the cloud, YoWASP [26 ] enables loading from the the FPGA, while the computer architecture course both expands
+browser through the use of WebAssembly. this subset and includes the design and implementation of a cache
+Initially, the students construct simple digital I/O features (e.g., (since the UPduino does not have an external memory, both main
+switch inputs, LED outputs) to exercise their deployed bitstreams. memory and cache are deployed in on-chip memory resources). In
+Figure 4 is an example from an assignment in the digital logic both cases, the students need to generate RISC-V instructions to
+course. Subsequently, they graduate to a more full-featured I/O execute on their constructed processor(s).
+board (see Figure 5), that contains 7-segment LEDs and multiple When studying the ISA and its associated assembly language,
+buttons. It interfaces to the FPGA using the TM1638 driver chip the students utilize the Venus RISC-V instruction set simulator [ 21 ],
+via a synchronous serial bus. A locally developed driver (available originally developed by Keyhan Vakil and more recently maintained
+at [15 ]) provides digital input and output ports for a design on the by Steven K. (aka ThaumicMekanism). It has been integrated into VS
+FPGA and transitions those ports to the physical inputs and outputs Code [22 ], facilitating ease of use for the students. RISC-V assembly
+on the I/O board. support for syntax highlighting is provided by Sun [19].
+40
+
+--- Page Break ---
+
+CF Companion ’25, May 28–30, 2025, Cagliari, Italy Siever et al.
+For programs written in a high-level language, compilation from by Manta [ 9]. Finally, high-level synthesis compilers have recently
+C and/or C++ is supported by the GNU RISC-V compiler [12]. gotten to the point that they are effective in many contexts, e.g.,
+spacecraft [ 18 ]. Our group is exploring open source HLS compilers
+4 Discussion such as ScaleHLS [25 ] in this area, and it would be of interest to
+see these tools also incorporated into the undergraduate computer
+The motivation for this work includes authenticity of the experience,
+engineering curriculum.
+cost to students, complexity of the tools, supporting a focus on the
+task at hand, and portability across multiple platforms.
+References
+• Authenticity. All of the tools used here are effective at digital [1] Steven Bell. 2023. Reimagining the digital lab with $30 FPGAs. In Proc. of ASEE
+system design and are used by a wide community, includ- Annual Conference & Exposition. 16 pages.
+[2] Cocotb. Accessed Feb. 2025. COroutine based COsimulation TestBench. https:
+ing many commercial firms. Even though some tools are
+//www.cocotb.org/.
+designed explicitly as teaching tools, they still perform the [3] Gwenhael Goavec-Merou et al. Accessed Feb. 2025. openFPGALoader: universal
+functions appropriate to the task at hand. The result is a utility for loading FPGA. https://trabucayre.github.io/openFPGALoader/.
+[4] Sarah Harris and David Harris. 2022. Digital Design and Computer Architecture,
+learning experience for students that is effective at giving
+RISC-V Edition. Morgan Kaufmann.
+them an authentic design experience. [5] Masahiro Hiramori. Accessed Feb. 2025. Verilog-HDL/SystemVerilog/Bluespec
+• Cost. The only cost incurred by students is the physical SystemVerilog support for VS Code. https://marketplace.visualstudio.com/items?
+itemName=mshr-h.VerilogHDL.
+hardware, as almost all of the software is open source and the [6] André Knörig, Reto Wettach, and Jonathan Cohen. 2009. Fritzing: a tool for
+rest is free to use. For example, if executing the tools in the advancing electronic prototyping for designers. In Proc. of 3rd International
+Conference on Tangible and Embedded Interaction. 351–358.
+cloud, the cloud provider, Microsoft, provides a modest time
+[7] Mikael Koskinen, Tommi Mikkonen, and Pekka Abrahamsson. 2019. Containers
+budget to students at no charge. In addition, the hardware is in software development: A systematic mapping study. In Proc. of International
+quite inexpensive, with the UPduino costing under $40 and Conference on Product-Focused Software Process Improvement. Springer, 176–191.
+[8] Marek Materzok. 2019. DigitalJS: A visual Verilog simulator for teaching. In Proc.
+the I/O board available for under $10.
+of 8th Computer Science Education Research Conference. ACM, 110–115.
+• Complexity. The installation and tool use overheads are held [9] Fischer Moseley. Accessed Feb. 2025. Manta: A Configurable and Approach-
+to a minimum through the effective use of containers, which able Tool for FPGA Debugging and Rapid Prototyping. https://github.com/
+fischermoseley/manta.
+are designed for that very purpose. [10] Claus Pahl, Antonio Brogi, Jacopo Soldani, and Pooyan Jamshidi. 2017. Cloud
+• Focus. While our desire is to put together a tool suite that container technologies: a state-of-the-art review. IEEE Transactions on Cloud
+Computing 7, 3 (2017), 677–692.
+does what needs to be done, but not lots of other things to
+[11] David A Poplawski. 2007. A pedagogically targeted logic design and simulation
+distract the students, this is inherently a difficult task. The tool. In Proc. of Workshop on Computer Architecture Education. 1–7.
+current collection of tools is somewhat more organized (i.e., [12] RISC-V Collaboration. Accessed Feb. 2025. RISC-V GNU Compiler Toolchain.
+https://github.com/riscv-collab/riscv-gnu-toolchain/.
+separate tools for separate tasks). However, the inherent
+[13] David Shah, Eddie Hung, Clifford Wolf, Serge Bazanski, Dan Gisselquist, and
+differences that are present in the tasks to be performed Miodrag Milanovic. 2019. Yosys+ nextpnr: an open source framework from Ver-
+(and the fact that they were developed by a diverse set of ilog to bitstream for commercial FPGAs. In Proc. of 27th International Symposium
+on Field-Programmable Custom Computing Machines (FCCM). IEEE, 1–4.
+individuals) imply that there are variations in user interfaces [14] Bill Siever. Accessed Feb. 2025. JLS: Java Logic Simulator. https://github.com/
+that can be confusing. In our opinion, this is the one area bsiever/JLS/.
+[15] Bill Siever. Accessed Mar. 2025. Tools for Digital Logic and Computer Design.
+where we were not uniformly satisfied with the end result,
+https://github.com/digital-logic-and-computer-design/upduino-devcontainer.
+but we came away with a better understanding of its inherent [16] Bill Siever, Michael Hall, Jim Feher, and Roger Chamberlain. 2025. Digital Logic,
+challenges, and we also believe the result is an improvement Computer Architecture, and Dev Containers: Supporting Schools from Little to
+Large. In Proc. of 56th ACM Technical Symposium on Computer Science Education,
+on commercial tools.
+Vol. 2. 1737.
+• Portability. With containerization, the entire tool flow can [17] Wilson Snyder. 2018. Verilator 4.0: open simulation goes multithreaded. In Open
+run natively on Linux, Windows, MacOS, or the cloud. This Source Digital Design Conference (ORConf).
+[18] Marion Sudvarg, Chenfeng Zhao, Ye Htet, Meagan Konst, Thomas Lang, Nick
+is considerably broader coverage than is typically supported Song, Roger D. Chamberlain, Jeremy Buhler, and James H. Buckley. 2024. HLS Tak-
+by many of the commercial tools. ing Flight: Toward Using High-Level Synthesis Techniques in a Space-Borne In-
+strument. In Proc. of 21st Int’l Conference on Computing Frontiers. ACM, 11 pages.
+[19] Shao-Ce Sun. Accessed Feb. 2025. Most Comprehensive RISC-V ASM Highlight-
+5 Conclusions and Future Work ing. https://marketplace.visualstudio.com/items?itemName=sunshaoce.RISC-V.
+[20] UPduino. Accessed Feb. 2025. UPduino-v3.0 and 3.1. https://github.com/digital-
+The result of this effort is a suite of FPGA development tools that logic-and-computer-design/UPduino-v3.0/.
+are multi-platform (and therefore portable), inexpensive (thirteen [21] Venus. Accessed Feb. 2025. Venus RISC-V instruction set simulator built for
+of which are open source, all of which are free to use), and effective education. https://github.com/ThaumicMekanism/venus.
+[22] Venus – VS Code. Accessed Feb. 2025. RISC-V Venus Simulator embedded in VS
+for the task at hand. These features enable their use in a broad set Code. https://github.com/hm-riscv/vscode-riscv-venus.
+of contexts, ranging from large schools with plenty of instructional [23] Stephen Williams. Accessed Feb. 2025. The ICARUS Verilog Compilation System.
+https://github.com/steveicarus/iverilog.
+support, to small schools where the instructor is also responsible for
+[24] Clifford Wolf, Johann Glaser, and Johannes Kepler. 2013. Yosys-a free Verilog
+tools used in the classroom. See [15 ] for detailed usage instructions synthesis suite. In Proc. of 21st Austrian Workshop on Microelectronics (Austrochip).
+and pointers to all the tools. 6 pages.
+[25] Hanchen Ye, HyeGang Jun, Hyunmin Jeong, Stephen Neuendorffer, and Deming
+There are a number of directions we would like to expand this Chen. 2022. ScaleHLS: A scalable high-level synthesis framework with multi-level
+effort. We have already mentioned the desire to enable testbench de- transformations and optimizations. In Proc. of 59th ACM/IEEE Design Automation
+velopment in Python, which is supported by cocotb [ 2]. In addition, Conference. ACM, 1355–1358.
+[26] YoWASP. Accessed Feb. 2025. Unofficial WebAssembly-based packages for Yosys,
+the ability to observe internal signals in hardware via in-circuit nextpnr, and more. https://yowasp.org/.
+debugging support can be extremely helpful, a capability supported
+41
